@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Sear.it.objectmethod.sa.dao.impl;
+
 
 
 namespace Sear
@@ -21,8 +23,17 @@ namespace Sear
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-           object dt = connessioni.FiltraCittà(txt_city.Text);
+           object dt = DaoShops.ShopsByCity(txt_city.Text);
             dataGridView1.DataSource = dt;
         }
+
+        private void btn_fatturato_Click(object sender, EventArgs e)
+        {
+            int year = Int32.Parse(txt_fatturato.Text);
+            object dt = DaoStatistics.SalesByYear(year);
+            dataGridView1.DataSource = dt;
+        }
+
+
     }
 }
