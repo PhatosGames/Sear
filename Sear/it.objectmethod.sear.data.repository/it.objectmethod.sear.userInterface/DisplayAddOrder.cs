@@ -1,6 +1,7 @@
 ﻿using Sear.it.objectmethod.sa.connection.manager;
 using Sear.it.objectmethod.sa.helpers;
 using Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.combofillers;
+using Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.userInterface;
 using Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.Classes;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,7 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInt
         private void DisplayAddOrder_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
+          
         }
 
         private void btn_AddOrder_Click(object sender, EventArgs e)
@@ -81,10 +83,17 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInt
              }
         }
 
-    
+        private void AddItems_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
 
-
-
-
+            DisplayAddItems newForm = new DisplayAddItems();
+            newForm.ShowDialog();
+            this.WindowState = FormWindowState.Normal;
+        }
+        public string Product { get; set; }
+        public string ProductionYear { get; set; }
+        public string Quantity { get; set; }
+        public string TotalPrice { get; set; }
     }
 }

@@ -104,5 +104,19 @@ namespace Sear.it.objectmethod.sa.helpers
                     return ok;
             }
         }
+
+        //Add Item
+
+        public static bool ItemChecker(string txt)
+        {
+            if (string.IsNullOrEmpty(txt))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
