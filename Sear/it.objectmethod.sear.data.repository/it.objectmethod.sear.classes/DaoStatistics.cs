@@ -15,11 +15,13 @@ namespace Sear.it.objectmethod.sa.dao.impl
     class DaoStatistics
     {
       
-        public static object SalesByYear(int year)
+        public static object SalesByYear(string txt)
         {
+            int year = Int32.Parse(txt);
             SqlConnection conn = Connector.Connection();
+            SqlDataAdapter SDA = new SqlDataAdapter("exec SalesByYear @search", conn);
+            SDA.SelectCommand.Parameters.AddWithValue("@search", year);
             DataTable dt = new DataTable();
-            SqlDataAdapter SDA = new SqlDataAdapter("exec SalesByYear "+year, conn);
             SDA.Fill(dt);
             return dt;
         }

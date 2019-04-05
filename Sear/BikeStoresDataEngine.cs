@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Sear
 {
-    static class Program
+    static class BikeStoresDataEngine
     {
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
@@ -16,7 +16,7 @@ namespace Sear
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Display());
         }
     }
 }
