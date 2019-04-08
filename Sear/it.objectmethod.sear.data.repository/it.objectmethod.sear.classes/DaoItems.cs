@@ -25,5 +25,18 @@ namespace Sear.it.objectmethod.sa.dao.impl
             SDA.Fill(dt);
             return dt;
         }
+
+        public static int TotalPrice(int quantity, string item)
+        {
+            SqlConnection conn = Connector.Connection();
+            conn.Open();
+            SqlCommand SDA = new SqlCommand("exec total_price_item @quantity,@name", conn);
+            SDA.Parameters.AddWithValue("@name", item);
+            SDA.Parameters.AddWithValue("@quantity", quantity);
+
+            int total = (int)SDA.ExecuteScalar();
+            conn.Close();
+            return total;
+        }
     }
 }

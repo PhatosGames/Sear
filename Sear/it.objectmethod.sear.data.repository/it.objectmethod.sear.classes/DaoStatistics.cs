@@ -14,7 +14,7 @@ namespace Sear.it.objectmethod.sa.dao.impl
 {
     class DaoStatistics
     {
-      
+
         public static object SalesByYear(string txt)
         {
             int year = Int32.Parse(txt);

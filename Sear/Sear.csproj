@@ -86,6 +86,7 @@
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\DaoItems.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\DaoStatistics.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.combofillers\DisplayAddOrderFillers.cs" />
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.models\IDaoItems.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\Display.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -20,10 +20,13 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInt
     {
         public DisplayAddOrder()
         {
+
             InitializeComponent();
             FillStaff();
             FillStores();
         }
+
+
 
         void FillStores()
         {
@@ -45,7 +48,7 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInt
 
         }
 
-       
+
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -54,46 +57,65 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInt
         private void DisplayAddOrder_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
-          
+
         }
 
         private void btn_AddOrder_Click(object sender, EventArgs e)
         {
             string Message = InsertErrorManager.OrderChecker(txt_Customer.Text, comboBox_StoreNames.Text,
-                 comboBox1.Text, dateTimePicker.Text);
+                 comboBox1.Text, dateTimePicker.Text, txt_Total.Text);
             if (Message != "ok")
             {
                 MessageBox.Show(Message);
             }
             else
             {
-             if(DaoAddOrder.AddNewOrder(txt_Customer.Text, comboBox_StoreNames.Text,
-                comboBox1.Text, dateTimePicker.Text))
-             {
-                   var list=DaoAddOrder.OrderIdExtractor();
-                    foreach (string code in list)
-                    {
-                        MessageBox.Show("Order successfully added! Order Code :"+code);
-                    }
-           }
-             else
-             {
-                MessageBox.Show("Error During Interaction");
-             }
-             }
+                int total = Convert.ToInt32(txt_Total.Text);
+                string orderCode = DaoAddOrder.AddNewOrder(txt_Customer.Text, comboBox_StoreNames.Text,
+                 comboBox1.Text, dateTimePicker.Text, total);
+                MessageBox.Show("Order Added, Order Code:" + orderCode);
+            }
+
         }
 
         private void AddItems_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
 
-            DisplayAddItems newForm = new DisplayAddItems();
-            newForm.ShowDialog();
-            this.WindowState = FormWindowState.Normal;
+            using (DisplayAddItems newForm = new DisplayAddItems() { })
+            {
+                newForm.ShowDialog();
+                bool check = InsertErrorManager.AddItemsChecker(newForm.getItem().getName(), newForm.getItem().getQuantity());
+                if (check == true)
+                {
+                    int errorPrice = newForm.getItem().getTotalprice();
+                    if (errorPrice == 0)
+                    {
+                        MessageBox.Show("Item name entered invalid");
+                    }
+                    else
+                    {
+                        dataGridView1.Rows.Add(newForm.getItem().getName(), newForm.getItem().getQuantity(), newForm.getItem().getTotalprice(),
+                       "Delete");
+
+                        int Total = dataGridView1.Rows.Cast<DataGridViewRow>()
+                        .Sum(t => Convert.ToInt32(t.Cells[2].Value));
+                        txt_Total.Text = Total.ToString();
+                    }
+                }
+
+            }
         }
-        public string Product { get; set; }
-        public string ProductionYear { get; set; }
-        public string Quantity { get; set; }
-        public string TotalPrice { get; set; }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.ColumnIndex == 3 && dataGridView1[0, e.RowIndex].Value != null)
+            {
+                dataGridView1.Rows.RemoveAt(e.RowIndex);
+                int Total = dataGridView1.Rows.Cast<DataGridViewRow>()
+                .Sum(t => Convert.ToInt32(t.Cells[2].Value));
+                txt_Total.Text = Total.ToString();
+            }
+        }
     }
 }

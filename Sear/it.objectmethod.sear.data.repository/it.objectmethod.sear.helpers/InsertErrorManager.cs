@@ -90,18 +90,18 @@ namespace Sear.it.objectmethod.sa.helpers
 
         //Add Order 
 
-        public static string OrderChecker(string txtcustomerID, string txtstoreID, string txtstaffID, string txtitemID)
+        public static string OrderChecker(string txtcustomerID, string txtstoreID, string txtstaffID, string txtitemID, string totalprize)
         {
             if (string.IsNullOrEmpty(txtcustomerID) || string.IsNullOrEmpty(txtstoreID) ||
-                string.IsNullOrEmpty(txtstaffID) || string.IsNullOrEmpty(txtitemID))
+                string.IsNullOrEmpty(txtstaffID) || string.IsNullOrEmpty(txtitemID) || string.IsNullOrEmpty(totalprize))
             {
                 string errorMessage = "All fields must be filled!";
                 return errorMessage;
             }
             else
             {
-                    string ok = "ok";
-                    return ok;
+                string ok = "ok";
+                return ok;
             }
         }
 
@@ -110,6 +110,17 @@ namespace Sear.it.objectmethod.sa.helpers
         public static bool ItemChecker(string txt)
         {
             if (string.IsNullOrEmpty(txt))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public static bool AddItemsChecker(string txt, int quantity)
+        {
+            if (string.IsNullOrEmpty(txt) || quantity == 0)
             {
                 return false;
             }

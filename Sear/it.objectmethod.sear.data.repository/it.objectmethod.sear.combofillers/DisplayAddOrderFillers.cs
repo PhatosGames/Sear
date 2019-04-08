@@ -54,7 +54,7 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.combofi
             SqlConnection conn = Connector.Connection();
             SqlDataReader reader;
             conn.Open();
-            SqlCommand SDA = new SqlCommand(" Select product_name as Products from production.products where product_name like '%"+patter+"%'", conn);
+            SqlCommand SDA = new SqlCommand(" Select product_name as Products from production.products where product_name like '%" + patter + "%'", conn);
             reader = SDA.ExecuteReader();
             while (reader.Read())
             {
@@ -67,6 +67,6 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.combofi
             return retList;
         }
 
-       
+
     }
 }

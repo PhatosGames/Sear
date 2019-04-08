@@ -45,32 +45,33 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.btn_AddItems = new System.Windows.Forms.Button();
-            this.dataGridView_Orders = new System.Windows.Forms.DataGridView();
+            this.displayAddOrderBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.displayAddOrderBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.displayAddOrderBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.displayAddOrderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.displayAddOrderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.displayAddOrderBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.displayAddOrderBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.displayAddOrderBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productionYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txt_Total = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.staffnamesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bikeStoresDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffnamesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Orders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_back
@@ -190,66 +191,72 @@
             this.btn_AddItems.UseVisualStyleBackColor = false;
             this.btn_AddItems.Click += new System.EventHandler(this.AddItems_Click);
             // 
-            // dataGridView_Orders
+            // dataGridView1
             // 
-            this.dataGridView_Orders.AllowUserToAddRows = false;
-            this.dataGridView_Orders.AutoGenerateColumns = false;
-            this.dataGridView_Orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Orders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Product,
-            this.productionYearDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn,
-            this.TotalPrice,
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductName,
+            this.Quantity,
+            this.Price,
             this.Delete});
-            this.dataGridView_Orders.DataSource = this.displayAddOrderBindingSource6;
-            this.dataGridView_Orders.Location = new System.Drawing.Point(4, 157);
-            this.dataGridView_Orders.Name = "dataGridView_Orders";
-            this.dataGridView_Orders.Size = new System.Drawing.Size(645, 150);
-            this.dataGridView_Orders.TabIndex = 22;
+            this.dataGridView1.Location = new System.Drawing.Point(27, 138);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(443, 194);
+            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // displayAddOrderBindingSource6
+            // ProductName
             // 
-            this.displayAddOrderBindingSource6.DataSource = typeof(Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInterface.DisplayAddOrder);
+            this.ProductName.HeaderText = "Product";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
             // 
-            // Product
+            // Quantity
             // 
-            this.Product.DataPropertyName = "Product";
-            this.Product.HeaderText = "Product";
-            this.Product.Name = "Product";
-            this.Product.Width = 150;
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
             // 
-            // productionYearDataGridViewTextBoxColumn
+            // Price
             // 
-            this.productionYearDataGridViewTextBoxColumn.DataPropertyName = "ProductionYear";
-            this.productionYearDataGridViewTextBoxColumn.HeaderText = "ProductionYear";
-            this.productionYearDataGridViewTextBoxColumn.Name = "productionYearDataGridViewTextBoxColumn";
-            this.productionYearDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "TotalPrice";
-            this.TotalPrice.Name = "TotalPrice";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // Delete
             // 
             this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // txt_Total
+            // 
+            this.txt_Total.Location = new System.Drawing.Point(505, 199);
+            this.txt_Total.Name = "txt_Total";
+            this.txt_Total.ReadOnly = true;
+            this.txt_Total.Size = new System.Drawing.Size(100, 20);
+            this.txt_Total.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(502, 183);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Total:";
             // 
             // DisplayAddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 344);
-            this.Controls.Add(this.dataGridView_Orders);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_Total);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_AddItems);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label6);
@@ -269,14 +276,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.bikeStoresDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffnamesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Orders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.displayAddOrderBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,7 +308,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button btn_AddItems;
-        private System.Windows.Forms.DataGridView dataGridView_Orders;
         private System.Windows.Forms.DataGridViewTextBoxColumn acceptButtonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn autoScrollDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn autoSizeDataGridViewCheckBoxColumn;
@@ -479,7 +485,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productionYearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.BindingSource displayAddOrderBindingSource6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.TextBox txt_Total;
+        private System.Windows.Forms.Label label4;
     }
 }

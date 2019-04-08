@@ -13,14 +13,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInterface;
+using Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.models;
 
 namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.userInterface
 {
     public partial class DisplayAddItems : Form
     {
+        public IDaoItems item;
+
+        public IDaoItems getItem()
+        {
+            return this.item;
+        }
+
+        public void setItem(IDaoItems _item)
+        {
+            this.item = _item;
+        }
+
         public DisplayAddItems()
         {
             InitializeComponent();
+            item = new IDaoItems();
         }
 
         private void DisplayAddItems_Load(object sender, EventArgs e)
@@ -42,7 +56,7 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.userInt
             }
             else
             {
-                MessageBox.Show("Search filed is empty!");
+                MessageBox.Show("Search field is empty!");
             }
 
         }
@@ -53,12 +67,21 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.userInt
             DataGridViewRow row = dataGridView_Items.Rows[i];
             txt_Item.Text = row.Cells[0].Value.ToString();
         }
-        
+
         private void btn_add_Click(object sender, EventArgs e)
         {
-            string Item = txt_Item.Text;
-            string Quantity = txt_Quantity.Text;
-            DisplayAddOrder.displayAddOrderBindingSource6.Add(new DisplayAddOrder() { Product = txt_Item.Text, ProductionYear = "2016", Quantity = txt_Quantity.Text, TotalPrice = "000" });
+            if (InsertErrorManager.AddItemsChecker(txt_Item.Text, (int)numericUpDown.Value))
+            {
+                item.setItem((string)txt_Item.Text);
+                item.setQuantity((int)numericUpDown.Value);
+                item.setTotalprice((string)txt_Item.Text, (int)numericUpDown.Value);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("All field must be filled up!");
+            }
+
         }
     }
 }
