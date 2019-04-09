@@ -14,7 +14,7 @@ namespace Sear.it.objectmethod.sa.dao.impl
 {
     class DaoShops
     {
-        public static object ShopsByCity(string city)
+        public static DataTable ShopsByCity(string city)
         {
 
             SqlConnection conn = Connector.Connection();

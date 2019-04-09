@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.userInterface;
+using System;
 using System.Windows.Forms;
 
 namespace Sear
@@ -16,7 +14,7 @@ namespace Sear
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Display());
+            Application.Run(new PreLoginForm());
         }
     }
 }

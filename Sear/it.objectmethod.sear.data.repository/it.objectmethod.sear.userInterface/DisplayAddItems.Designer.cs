@@ -44,6 +44,7 @@
             // btn_back
             // 
             this.btn_back.BackColor = System.Drawing.Color.Olive;
+            this.btn_back.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_back.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_back.Location = new System.Drawing.Point(413, 12);
             this.btn_back.Name = "btn_back";
@@ -136,6 +137,8 @@
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_back);
+            this.MaximumSize = new System.Drawing.Size(516, 320);
+            this.MinimumSize = new System.Drawing.Size(516, 320);
             this.Name = "DisplayAddItems";
             this.Text = "DisplayAddItems";
             this.Load += new System.EventHandler(this.DisplayAddItems_Load);

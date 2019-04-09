@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.models
 {
-    public class IDaoItems
+    public class Items
     {
         private String name;
         private int quantity;

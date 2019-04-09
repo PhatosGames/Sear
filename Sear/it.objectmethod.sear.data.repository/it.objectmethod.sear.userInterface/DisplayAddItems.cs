@@ -19,14 +19,14 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.userInt
 {
     public partial class DisplayAddItems : Form
     {
-        public IDaoItems item;
+        public Items item;
 
-        public IDaoItems getItem()
+        public Items getItem()
         {
             return this.item;
         }
 
-        public void setItem(IDaoItems _item)
+        public void setItem(Items _item)
         {
             this.item = _item;
         }
@@ -34,7 +34,7 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.userInt
         public DisplayAddItems()
         {
             InitializeComponent();
-            item = new IDaoItems();
+            item = new Items();
         }
 
         private void DisplayAddItems_Load(object sender, EventArgs e)

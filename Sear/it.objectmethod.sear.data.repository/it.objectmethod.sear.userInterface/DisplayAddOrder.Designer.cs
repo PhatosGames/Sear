@@ -76,9 +76,10 @@
             // 
             // btn_back
             // 
+            this.btn_back.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_back.BackColor = System.Drawing.Color.Olive;
             this.btn_back.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_back.Location = new System.Drawing.Point(574, 19);
+            this.btn_back.Location = new System.Drawing.Point(611, 19);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
             this.btn_back.TabIndex = 0;
@@ -88,9 +89,10 @@
             // 
             // btn_AddOrder
             // 
+            this.btn_AddOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AddOrder.BackColor = System.Drawing.Color.DarkRed;
             this.btn_AddOrder.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_AddOrder.Location = new System.Drawing.Point(552, 90);
+            this.btn_AddOrder.Location = new System.Drawing.Point(599, 75);
             this.btn_AddOrder.Name = "btn_AddOrder";
             this.btn_AddOrder.Size = new System.Drawing.Size(87, 46);
             this.btn_AddOrder.TabIndex = 1;
@@ -180,10 +182,11 @@
             // 
             // btn_AddItems
             // 
+            this.btn_AddItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_AddItems.BackColor = System.Drawing.Color.Orange;
             this.btn_AddItems.Cursor = System.Windows.Forms.Cursors.Default;
             this.btn_AddItems.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_AddItems.Location = new System.Drawing.Point(454, 19);
+            this.btn_AddItems.Location = new System.Drawing.Point(491, 19);
             this.btn_AddItems.Name = "btn_AddItems";
             this.btn_AddItems.Size = new System.Drawing.Size(114, 23);
             this.btn_AddItems.TabIndex = 21;
@@ -193,16 +196,19 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductName,
             this.Quantity,
             this.Price,
             this.Delete});
-            this.dataGridView1.Location = new System.Drawing.Point(27, 138);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 137);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 194);
+            this.dataGridView1.Size = new System.Drawing.Size(440, 216);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -234,7 +240,8 @@
             // 
             // txt_Total
             // 
-            this.txt_Total.Location = new System.Drawing.Point(505, 199);
+            this.txt_Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_Total.Location = new System.Drawing.Point(586, 141);
             this.txt_Total.Name = "txt_Total";
             this.txt_Total.ReadOnly = true;
             this.txt_Total.Size = new System.Drawing.Size(100, 20);
@@ -242,8 +249,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(502, 183);
+            this.label4.Location = new System.Drawing.Point(546, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 24;
@@ -253,7 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 344);
+            this.ClientSize = new System.Drawing.Size(699, 365);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_Total);
             this.Controls.Add(this.dataGridView1);
@@ -268,7 +276,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_AddOrder);
             this.Controls.Add(this.btn_back);
+            this.MaximumSize = new System.Drawing.Size(715, 404);
+            this.MinimumSize = new System.Drawing.Size(715, 404);
             this.Name = "DisplayAddOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddOrder";
             this.Load += new System.EventHandler(this.DisplayAddOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.staffnamesBindingSource)).EndInit();

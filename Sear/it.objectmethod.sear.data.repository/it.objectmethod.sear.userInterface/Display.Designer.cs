@@ -70,14 +70,17 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(289, 24);
+            this.dataGridView.Location = new System.Drawing.Point(322, 24);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(460, 393);
+            this.dataGridView.Size = new System.Drawing.Size(587, 423);
             this.dataGridView.TabIndex = 3;
             // 
             // label2
@@ -108,9 +111,10 @@
             // 
             // Export
             // 
+            this.Export.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Export.BackColor = System.Drawing.Color.DarkRed;
             this.Export.ForeColor = System.Drawing.SystemColors.Window;
-            this.Export.Location = new System.Drawing.Point(199, 394);
+            this.Export.Location = new System.Drawing.Point(213, 430);
             this.Export.Name = "Export";
             this.Export.Size = new System.Drawing.Size(75, 23);
             this.Export.TabIndex = 7;
@@ -120,15 +124,17 @@
             // 
             // txt_exp
             // 
-            this.txt_exp.Location = new System.Drawing.Point(186, 368);
+            this.txt_exp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_exp.Location = new System.Drawing.Point(200, 404);
             this.txt_exp.Name = "txt_exp";
             this.txt_exp.Size = new System.Drawing.Size(100, 20);
             this.txt_exp.TabIndex = 8;
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(204, 352);
+            this.label3.Location = new System.Drawing.Point(218, 388);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 9;
@@ -151,7 +157,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(960, 480);
             this.Controls.Add(this.btn_addOrder);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_exp);
@@ -163,7 +169,9 @@
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_city);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(976, 519);
             this.Name = "Display";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

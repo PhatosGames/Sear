@@ -82,18 +82,18 @@
       <DependentUpon>BikeStoresDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="it.objectmethod.sear.data.repository\Connector.cs" />
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\DaoAddOrder.cs" />
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\DaoItems.cs" />
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\DaoStatistics.cs" />
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\RepositoryOrder.cs" />
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\RepositoryItems.cs" />
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\RepositoryStatistics.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.combofillers\DisplayAddOrderFillers.cs" />
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.models\IDaoItems.cs" />
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.models\Items.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\Display.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\Display.Designer.cs">
       <DependentUpon>Display.cs</DependentUpon>
     </Compile>
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\DaoShops.cs" />
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\RepositoryShops.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.helpers\InsertErrorManager.cs" />
     <Compile Include="BikeStoresDataEngine.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\DisplayAddItems.cs">
@@ -108,12 +108,25 @@
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\DisplayAddOrder.Designer.cs">
       <DependentUpon>DisplayAddOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\PreLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\PreLoginForm.Designer.cs">
+      <DependentUpon>PreLoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaffDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StaffDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\WinAPI.cs" />
     <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\Display.resx">
       <DependentUpon>Display.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\DisplayAddOrder.resx">
       <DependentUpon>DisplayAddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\PreLoginForm.resx">
+      <DependentUpon>PreLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
