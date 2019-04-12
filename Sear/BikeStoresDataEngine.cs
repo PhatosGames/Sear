@@ -14,7 +14,7 @@ namespace Sear
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PreLoginForm());
+            Application.Run(new FormPreLogin());
         }
     }
 }

@@ -33,5 +33,46 @@ namespace Sear.it.objectmethod.sa.dao.impl
             conn.Close();
             return total;
         }
+
+        public static void AddItem(string name, int quantity, int price,string ordercode)
+        {
+            SqlConnection conn = Connector.Connection();
+            conn.Open();
+            SqlCommand SDA = new SqlCommand("exec add_items @name,@quantity,@price,@ordercode", conn);
+            
+            SDA.Parameters.AddWithValue("@name", name);
+            SDA.Parameters.AddWithValue("@quantity", quantity);
+            SDA.Parameters.AddWithValue("@price", price);
+            SDA.Parameters.AddWithValue("@ordercode", ordercode);
+            SDA.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void DeleteItemsByCode (string ordercode)
+        {
+            SqlConnection conn = Connector.Connection();
+            conn.Open();
+            SqlCommand SDA = new SqlCommand("exec delete_items_by_code @ordercode", conn);
+            
+            SDA.Parameters.AddWithValue("@ordercode", ordercode);
+            SDA.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static DataTable OrderedItems(string ordercode)
+        {
+            SqlConnection conn = Connector.Connection();
+            conn.Open();
+            SqlDataAdapter SDA = new SqlDataAdapter("select  pp.product_name as Product ,item_id as Quantity ," +
+                                            " soi.list_price as Price from sales.order_items as soi join" +
+                                            " production.products as pp on soi.product_id=pp.product_id join " +
+                                            "sales.orders as so on soi.order_id=so.order_id where order_code=@code", conn);
+            SDA.SelectCommand.Parameters.AddWithValue("@code", ordercode);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+            return dt;
+        }
+
+
     }
 }

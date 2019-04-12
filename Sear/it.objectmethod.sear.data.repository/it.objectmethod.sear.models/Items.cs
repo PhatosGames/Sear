@@ -12,6 +12,7 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.models
         private String name;
         private int quantity;
         private int totalprice;
+        
 
         public String getName()
         {
@@ -41,4 +42,6 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.sear.models
             this.totalprice = total;
         }
     }
+
+
 }

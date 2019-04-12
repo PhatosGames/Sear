@@ -50,6 +50,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,86 +63,93 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BikeStoresDataSet.Designer.cs">
+    <Compile Include="Connected Services\LocalServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BikeStoresDataSet.xsd</DependentUpon>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="BikeStoresDataSet1.Designer.cs">
+    <Compile Include="Connected Services\ServiceApp\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BikeStoresDataSet1.xsd</DependentUpon>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="BikeStoresDataSet2.Designer.cs">
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BikeStoresDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="BikeStoresDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BikeStoresDataSet3.xsd</DependentUpon>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="it.objectmethod.sear.data.repository\Connector.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\RepositoryOrder.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\RepositoryItems.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\RepositoryStatistics.cs" />
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.combofillers\DisplayAddOrderFillers.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.models\Items.cs" />
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\Display.cs">
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\Display.Designer.cs">
-      <DependentUpon>Display.cs</DependentUpon>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormStatistics.Designer.cs">
+      <DependentUpon>FormStatistics.cs</DependentUpon>
     </Compile>
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.classes\RepositoryShops.cs" />
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.helpers\InsertErrorManager.cs" />
     <Compile Include="BikeStoresDataEngine.cs" />
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\DisplayAddItems.cs">
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormItems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\DisplayAddItems.Designer.cs">
-      <DependentUpon>DisplayAddItems.cs</DependentUpon>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormItems.Designer.cs">
+      <DependentUpon>FormItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\DisplayAddOrder.cs">
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormUpAddOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\DisplayAddOrder.Designer.cs">
-      <DependentUpon>DisplayAddOrder.cs</DependentUpon>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormUpAddOrder.Designer.cs">
+      <DependentUpon>FormUpAddOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\LoginForm.cs">
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormMenu%27.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormMenu%27.Designer.cs">
+      <DependentUpon>FormMenu%27.cs</DependentUpon>
     </Compile>
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\PreLoginForm.cs">
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\PreLoginForm.Designer.cs">
-      <DependentUpon>PreLoginForm.cs</DependentUpon>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormOrder.Designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormPreLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormPreLogin.Designer.cs">
+      <DependentUpon>FormPreLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaffDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StaffDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\WinAPI.cs" />
-    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\Display.resx">
-      <DependentUpon>Display.cs</DependentUpon>
+    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormStatistics.resx">
+      <DependentUpon>FormStatistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\DisplayAddItems.resx">
-      <DependentUpon>DisplayAddItems.cs</DependentUpon>
+    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormItems.resx">
+      <DependentUpon>FormItems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\DisplayAddOrder.resx">
-      <DependentUpon>DisplayAddOrder.cs</DependentUpon>
+    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormUpAddOrder.resx">
+      <DependentUpon>FormUpAddOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormMenu%27.resx">
+      <DependentUpon>FormMenu%27.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\PreLoginForm.resx">
-      <DependentUpon>PreLoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormOrder.resx">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="it.objectmethod.sear.data.repository\it.objectmethod.sear.userInterface\FormPreLogin.resx">
+      <DependentUpon>FormPreLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,49 +160,35 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="BikeStoresDataSet.xsc">
-      <DependentUpon>BikeStoresDataSet.xsd</DependentUpon>
+    <None Include="Connected Services\LocalServices\MyService.wsdl" />
+    <None Include="Connected Services\LocalServices\Sear.LocalServices.echoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="BikeStoresDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BikeStoresDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <None Include="Connected Services\LocalServices\Sear.LocalServices.Output.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="BikeStoresDataSet.xss">
-      <DependentUpon>BikeStoresDataSet.xsd</DependentUpon>
+    <None Include="Connected Services\LocalServices\Sear.LocalServices.sortResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="BikeStoresDataSet1.xsc">
-      <DependentUpon>BikeStoresDataSet1.xsd</DependentUpon>
+    <None Include="Connected Services\ServiceApp\MyService.wsdl" />
+    <None Include="Connected Services\ServiceApp\Sear.ServiceApp.echoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="BikeStoresDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BikeStoresDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <None Include="Connected Services\ServiceApp\Sear.ServiceApp.Output.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="BikeStoresDataSet1.xss">
-      <DependentUpon>BikeStoresDataSet1.xsd</DependentUpon>
+    <None Include="Connected Services\ServiceApp\Sear.ServiceApp.sortResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="BikeStoresDataSet2.xsc">
-      <DependentUpon>BikeStoresDataSet2.xsd</DependentUpon>
+    <None Include="Connected Services\ServiceReference1\MyService.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Sear.ServiceReference1.echoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="BikeStoresDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BikeStoresDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <None Include="Connected Services\ServiceReference1\Sear.ServiceReference1.Output.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="BikeStoresDataSet2.xss">
-      <DependentUpon>BikeStoresDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="BikeStoresDataSet3.xsc">
-      <DependentUpon>BikeStoresDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="BikeStoresDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BikeStoresDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BikeStoresDataSet3.xss">
-      <DependentUpon>BikeStoresDataSet3.xsd</DependentUpon>
+    <None Include="Connected Services\ServiceReference1\Sear.ServiceReference1.sortResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInterface.DisplayAddOrder.datasource" />
     <None Include="Properties\Settings.settings">
@@ -205,17 +200,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="StaffDataSet.xsc">
-      <DependentUpon>StaffDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="StaffDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>StaffDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="StaffDataSet.xss">
-      <DependentUpon>StaffDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -234,6 +218,47 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\LocalServices\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceApp\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LocalServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LocalServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LocalServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceApp\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceApp\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceApp\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

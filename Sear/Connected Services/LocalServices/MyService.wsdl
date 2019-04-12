@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://config.soap.objectmethod.it" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://config.soap.objectmethod.it" targetNamespace="http://config.soap.objectmethod.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://config.soap.objectmethod.it">
+      <xsd:element name="sort">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="input" type="impl:Input" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOf_xsd_int">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Input">
+        <xsd:sequence>
+          <xsd:element name="vector" nillable="true" type="impl:ArrayOf_xsd_int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="sortResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sortReturn" type="impl:Output" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Output">
+        <xsd:sequence>
+          <xsd:element name="sortedVector" nillable="true" type="impl:ArrayOf_xsd_int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="echo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="message" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="echoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="echoReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sortRequest">
+    <wsdl:part name="parameters" element="impl:sort" />
+  </wsdl:message>
+  <wsdl:message name="echoResponse">
+    <wsdl:part name="parameters" element="impl:echoResponse" />
+  </wsdl:message>
+  <wsdl:message name="sortResponse">
+    <wsdl:part name="parameters" element="impl:sortResponse" />
+  </wsdl:message>
+  <wsdl:message name="echoRequest">
+    <wsdl:part name="parameters" element="impl:echo" />
+  </wsdl:message>
+  <wsdl:portType name="MyService">
+    <wsdl:operation name="sort">
+      <wsdl:input name="sortRequest" message="impl:sortRequest" />
+      <wsdl:output name="sortResponse" message="impl:sortResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="echo">
+      <wsdl:input name="echoRequest" message="impl:echoRequest" />
+      <wsdl:output name="echoResponse" message="impl:echoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyServiceSoapBinding" type="impl:MyService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sort">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="sortRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sortResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="echo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="echoRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="echoResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyServiceService">
+    <wsdl:port name="MyService" binding="impl:MyServiceSoapBinding">
+      <wsdlsoap:address location="http://localhost:8080/WebServiceTest/services/MyService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
