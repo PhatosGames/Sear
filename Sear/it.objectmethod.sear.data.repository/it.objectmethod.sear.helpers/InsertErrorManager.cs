@@ -90,18 +90,18 @@ namespace Sear.it.objectmethod.sa.helpers
 
         //Add Order 
 
-        public static string OrderChecker(string txtcustomerID, string txtstoreID, string txtstaffID, string txtitemID, string totalprize)
+        public static bool OrderChecker(string txtcustomerID, string txtstoreID, string txtstaffID, string txtitemID, string totalprize)
         {
             if (string.IsNullOrEmpty(txtcustomerID) || string.IsNullOrEmpty(txtstoreID) ||
                 string.IsNullOrEmpty(txtstaffID) || string.IsNullOrEmpty(txtitemID) || string.IsNullOrEmpty(totalprize))
             {
-                string errorMessage = "All fields must be filled!";
-                return errorMessage;
+               
+                return false;
             }
             else
             {
-                string ok = "ok";
-                return ok;
+                
+                return true;
             }
         }
 

@@ -103,11 +103,11 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInt
 
         private void btn_AddOrder_Click(object sender, EventArgs e)
         {
-            string Message = InsertErrorManager.OrderChecker(txt_Customer.Text, comboBox_StoreNames.Text,
+            bool check = InsertErrorManager.OrderChecker(txt_Customer.Text, comboBox_StoreNames.Text,
                  comboBox1.Text, dateTimePicker.Text, txt_Total.Text);
-            if (Message != "ok")
+            if(check == true)
             {
-                MessageBox.Show(Message);
+                MessageBox.Show("All field must be filled");
             }
             else
             {
@@ -173,11 +173,11 @@ namespace Sear.it.objectmethod.sear.data.repository.it.objectmethod.Sear.UserInt
 
         private void btn_ChangeOrder_Click(object sender, EventArgs e)
         {
-            string Message = InsertErrorManager.OrderChecker(txt_Customer.Text, comboBox_StoreNames.Text,
+            bool val = InsertErrorManager.OrderChecker(txt_Customer.Text, comboBox_StoreNames.Text,
                 comboBox1.Text, dateTimePicker.Text, txt_Total.Text);
-            if (Message != "ok")
+            if (val==false)
             {
-                MessageBox.Show(Message);
+                MessageBox.Show("All field must be filled");
             }
             else
             {
